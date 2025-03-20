@@ -13,30 +13,30 @@ const Product = () => {
   const [products, setProducts] = useState<CartItem[]>([]);
   const [productData, setProductData] = useState<CartItem | null>(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios.get("https://fakestoreapi.com/products");
-        if (Array.isArray(res.data)) {
-          setProducts(res.data);
-        } else {
-          console.error("Expected an array from API, got:", res.data);
-        }
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
-    fetchData();
-  }, []);
+  //   useEffect(() => {
+  //     const fetchData = async () => {
+  //       try {
+  //         const res = await axios.get("https://fakestoreapi.com/products");
+  //         if (Array.isArray(res.data)) {
+  //           setProducts(res.data);
+  //         } else {
+  //           console.error("Expected an array from API, got:", res.data);
+  //         }
+  //       } catch (error) {
+  //         console.error("Error fetching products:", error);
+  //       }
+  //     };
+  //     fetchData();
+  //   }, []);
 
-  useEffect(() => {
-    if (products.length > 0 && id) {
-      const product = products.find(
-        (product) => product.id === parseInt(id as string)
-      );
-      setProductData(product || null);
-    }
-  }, [id, products]);
+  //   useEffect(() => {
+  //     if (products.length > 0 && id) {
+  //       const product = products.find(
+  //         (product) => product.id === parseInt(id as string)
+  //       );
+  //       setProductData(product || null);
+  //     }
+  //   }, [id, products]);
 
   const handleAddToCart = () => {
     if (productData) {

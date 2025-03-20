@@ -15,7 +15,6 @@ import { LogOutIcon } from "lucide-react";
 
 async function Navbar() {
   const user = await currentUser();
-  // if (user) await
 
   return (
     <div className="max-w-7xl mx-auto px-4 border-b border-[hsl(var(--border))] text-[hsl(var(--foreground))] ">
@@ -34,30 +33,31 @@ async function Navbar() {
             <FaYoutube className="hover:text-[hsl(var(--border))] transition" />
           </div>
 
-          <ModeToggle />
-          <DropdownMenuCheckboxes />
-
-          <div className="flex items-center space-x-4">
-            {user ? (
-              <SignOutButton>
-                <Button
-                  variant="ghost"
-                  className="flex items-center gap-3 justify-start w-full text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))] transition"
-                >
-                  <LogOutIcon className="w-4 h-4 text-[hsl(var(--primary))]" />
-                  Logout
-                </Button>
-              </SignOutButton>
-            ) : (
-              <SignInButton mode="modal">
-                <Button
-                  variant="default"
-                  className="bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--primary)/90)]"
-                >
-                  Sign In
-                </Button>
-              </SignInButton>
-            )}
+          <div className="flex space-x-3 items-center">
+            <ModeToggle />
+            <DropdownMenuCheckboxes />
+            <div className="flex items-center space-x-4">
+              {user ? (
+                <SignOutButton>
+                  <Button
+                    variant="ghost"
+                    className="flex bg-foreground items-center gap-3 w-full text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--muted))] transition"
+                  >
+                    <LogOutIcon className="w-4 h-4 text-[hsl(var(--primary))]" />
+                    Logout
+                  </Button>
+                </SignOutButton>
+              ) : (
+                <SignInButton mode="modal">
+                  <Button
+                    variant="default"
+                    className="bg-[hsl(var(--foreground))] text-[hsl(var(--primary-foreground))] hover:text-foreground hover:bg-[hsl(var(--muted))]"
+                  >
+                    Sign In
+                  </Button>
+                </SignInButton>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -10,26 +10,24 @@
 
 @layer base {
   :root {
-    /* 🌞 Light Mode (Fresh & Vibrant Greens) */
-    --background: 145, 50%, 96%; /* Soft minty green */
-    --foreground: 160, 60%, 20%; /* Deep emerald green */
-    --primary: 150, 70%, 40%; /* Rich forest green */
-    --primary-foreground: 0, 0%, 100%; /* White text */
-    --secondary: 155, 55%, 60%; /* Fresh soft green */
+    --background: 145, 50%, 96%;
+    --foreground: 160, 60%, 20%;
+    --primary: 150, 70%, 40%;
+    --primary-foreground: 0, 0%, 100%;
+    --secondary: 155, 55%, 60%;
     --secondary-foreground: 160, 60%, 20%;
-    --muted: 150, 50%, 85%; /* Pastel green */
+    --muted: 150, 50%, 85%;
     --muted-foreground: 160, 50%, 35%;
-    --border: 150, 40%, 55%; /* Subtle soft green */
+    --border: 150, 40%, 55%;
     --ring: 150, 70%, 40%;
   }
 
   .dark {
-    /* 🌙 Dark Mode (Deep & Cool Greens) */
-    --background: 160, 40%, 10%; /* Dark evergreen */
-    --foreground: 155, 75%, 85%; /* Soft pastel green */
-    --primary: 155, 70%, 45%; /* Vibrant jade green */
+    --background: 160, 40%, 10%;
+    --foreground: 155, 75%, 85%;
+    --primary: 155, 70%, 45%;
     --primary-foreground: 0, 0%, 100%;
-    --secondary: 160, 45%, 25%; /* Deep mossy green */
+    --secondary: 160, 45%, 25%;
     --secondary-foreground: 155, 75%, 85%;
     --muted: 160, 50%, 15%;
     --muted-foreground: 155, 75%, 70%;

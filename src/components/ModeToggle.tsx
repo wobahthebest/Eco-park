@@ -9,6 +9,7 @@ export default function ModeToggle() {
 
   return (
     <Button
+      className="bg-foreground  text-primary-foreground hover:bg-secondary"
       variant="outline"
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

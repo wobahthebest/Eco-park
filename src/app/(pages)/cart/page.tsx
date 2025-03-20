@@ -2,7 +2,6 @@
 import { useCartStore } from "../../../../store/cartStore";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 import { toast } from "sonner";
 const Cart = () => {
   const {
@@ -12,7 +11,6 @@ const Cart = () => {
     increaseQuantity,
     decreaseQuantity,
   } = useCartStore();
-  const [count, setCount] = useState<number>(0);
   const router = useRouter();
 
   const handleRemoveItem = (id: number) => {

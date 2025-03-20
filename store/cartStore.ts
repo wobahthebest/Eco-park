@@ -19,6 +19,7 @@ interface CartState {
   increaseQuantity: (id: number) => void;
   decreaseQuantity: (id: number) => void;
   toggleLike: (item: CartItem) => void;
+  removeFromLiked: (id: number) => void;
 }
 
 const loadCartFromStorage = (): CartItem[] => {
@@ -93,6 +94,13 @@ export const useCartStore = create<CartState>((set) => ({
       const updatedCart = state.cart.filter((item) => item.id !== id);
       localStorage.setItem("cart", JSON.stringify(updatedCart));
       return { cart: updatedCart };
+    }),
+
+  removeFromLiked: (id) =>
+    set((state) => {
+      const updatedLiked = state.likedItems.filter((item) => item.id !== id);
+      localStorage.setItem("liked", JSON.stringify(updatedLiked));
+      return { likedItems: updatedLiked };
     }),
 
   clearCart: () => {
